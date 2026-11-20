@@ -120,14 +120,14 @@ function heroArcSvg() {
   ${ticks}${steam}</svg>`;
 }
 
-// Risk dial for the phone mock: 180° gauge with a needle at score 80/100.
+// Risk dial for the phone mock: 180° gauge with a needle at score 90/100.
 function dialSvg(score) {
   const cx = 500, cy = 470, r = 380;
   const a = 180 + (180 * score) / 100;
   const [nx, ny] = polar(cx, cy, r - 70, a);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540">
   <path d="M${cx - r},${cy} A${r},${r} 0 0 1 ${cx + r},${cy}" stroke="#E7ECEC" stroke-width="96" fill="none"/>
-  ${arcSegments(cx, cy, r, 180, 360, 80, 120)}
+  ${arcSegments(cx, cy, r, 180, 360, 90, 120)}
   <line x1="${cx}" y1="${cy}" x2="${nx}" y2="${ny}" stroke="#101418" stroke-width="22" stroke-linecap="round"/>
   <circle cx="${cx}" cy="${cy}" r="38" fill="#101418"/><circle cx="${cx}" cy="${cy}" r="14" fill="#E2483D"/></svg>`;
 }
@@ -202,7 +202,7 @@ function contentSlide(master, section, kicker, title) {
   };
   for (const [k, [n, c]] of Object.entries(need)) I[k] = await iconPng(n, c);
   const hero = await svgPng(heroArcSvg(), 1400);
-  const dial = await svgPng(dialSvg(70), 900);
+  const dial = await svgPng(dialSvg(90), 900);
 
   // ===== 1. Title =====
   pres.addSection({ title: "Opening" });
@@ -372,7 +372,7 @@ function contentSlide(master, section, kicker, title) {
     text(s, "Margaret · 71 · Sydney", { x: sx, y: py + 0.34, w: sw, h: 0.3, fontSize: 12, bold: true, color: K.ink, objectName: "g1f-phone-head" });
     text(s, "Live · You.com  ·  Penang 34°C", { x: sx, y: py + 0.62, w: sw, h: 0.25, fontSize: 10, color: K.muted, objectName: "g1f-phone-live" });
     s.addImage({ data: dial, x: sx + 0.2, y: py + 0.95, w: sw - 0.4, h: (sw - 0.4) * 0.54, objectName: "g2f-dial", altText: "Risk dial pointing to red, score 70" });
-    text(s, "70 · RED", { x: sx, y: py + 2.3, w: sw, h: 0.42, fontSize: 22, bold: true, color: K.verm, align: "center", fontFace: HEAD, objectName: "g2f-score" });
+    text(s, "90 · HIGH RISK", { x: sx, y: py + 2.3, w: sw, h: 0.42, fontSize: 22, bold: true, color: K.verm, align: "center", fontFace: HEAD, objectName: "g2f-score" });
     // red flag card
     const fy = py + 2.8;
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: sx - 0.05, y: fy, w: sw + 0.1, h: 1.3, rectRadius: 0.1, fill: { color: K.verm, transparency: 88 }, line: { color: K.verm, width: 1.25 }, objectName: "g3u-flag-card" });
@@ -383,7 +383,7 @@ function contentSlide(master, section, kicker, title) {
     // prescription
     const ry = fy + 1.4;
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: sx - 0.05, y: ry, w: sw + 0.1, h: 0.62, rectRadius: 0.1, fill: { color: K.jade, transparency: 85 }, objectName: "g4u-rx-card" });
-    text(s, "Jade bath · 37.5°C · 6 min", { x: sx + 0.07, y: ry + 0.06, w: sw - 0.1, h: 0.3, fontSize: 13, bold: true, color: K.teal, objectName: "g4u-rx-t" });
+    text(s, "Jade bath · 37°C · 4 min × 2", { x: sx + 0.07, y: ry + 0.06, w: sw - 0.1, h: 0.3, fontSize: 13, bold: true, color: K.teal, objectName: "g4u-rx-t" });
     text(s, "Not medical advice · staff will check on you", { x: sx + 0.07, y: ry + 0.36, w: sw - 0.1, h: 0.24, fontSize: 10, color: K.muted, objectName: "g4u-rx-n" });
 
     // arrow phone -> console
@@ -398,7 +398,7 @@ function contentSlide(master, section, kicker, title) {
     const cols = [["GUEST", 0.3], ["BATH", 2.25], ["TIME VS LIMIT", 3.85], ["FLAGS", 5.35]];
     cols.forEach(([t, ox]) => text(s, t, { x: cx + ox + (t === "GUEST" ? 0.28 : 0), y: cy + 0.75, w: 2.0, h: 0.22, fontSize: 10, bold: true, color: K.soft, charSpacing: 1, objectName: "g5u-con-col-" + t.slice(0, 4) }));
     const rows = [
-      ["Margaret, 71", "Jade 37.5°C", 0.36, "2:10 / 6:00", ["patch", "β-blocker"], K.verm, HEX.verm, true],
+      ["Margaret, 71", "Jade 37°C", 0.5, "2:00 / 4:00", ["patch", "β-blocker"], K.verm, HEX.verm, true],
       ["Mr. Tanaka, 68", "Rotenburo 40°C", 0.7, "5:40 / 8:00", ["warfarin"], K.amber, HEX.amber, false],
       ["Chen family", "Family 38°C", 0.6, "3:00 / 5:00", ["child 6"], K.jade, HEX.jade, false],
       ["David, 52", "Foot bath only", 0.2, "no hot bath", ["3 beers"], K.verm, HEX.verm, false],
@@ -425,7 +425,7 @@ function contentSlide(master, section, kicker, title) {
     s.addImage({ data: I.bolt, x: cx + 0.28, y: 6.29, w: 0.37, h: 0.37, objectName: "g7u-spike-icon", altText: "" });
     text(s, [{ text: "Then the heat index spikes to 46°C: ", options: { bold: true } }, { text: "every guest's limit tightens, live." }],
       { x: cx + 0.85, y: 6.1, w: cw - 1.1, h: 0.75, fontSize: 16, color: K.ink, valign: "middle", objectName: "g7u-spike-t" });
-    s.addNotes("Here's the moment. Margaret talks for twenty seconds and the dial swings to red. Her patch stops her sweating; in a 41-degree bath on a 34-degree day, that can mean heat stroke in minutes. Ondo moves her to the 37.5-degree Jade bath for six minutes, with You.com sources, and her name lights up on the staff console. Then the heat index spikes to 46 and every limit tightens live. (about 25 seconds)");
+    s.addNotes("Here's the moment. Margaret talks for twenty seconds and the dial swings to red. Her patch stops her sweating; in a 41-degree bath on a 34-degree day, that can mean heat stroke in minutes. Ondo moves her to the 37-degree Jade bath for two short four-minute rounds, with You.com sources, and her name lights up on the staff console. Then the heat index spikes to 46 and every limit tightens live. (about 25 seconds)");
   }
 
   // ===== 7. Architecture =====
