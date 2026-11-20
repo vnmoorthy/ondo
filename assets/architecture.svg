@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">Ondo system architecture</title>
+<desc id="d">Guest app and Staff Safety Console (React) talk to a FastAPI backend. The backend runs LLM intake, a deterministic safety rules engine, You.com Search for live heat, You.com Answer for cited evidence, bookings, soak sessions and alerts, all stored in MongoDB.</desc>
+<defs>
+<style>
+.sans { font-family: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.mono { font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace; }
+</style>
+<radialGradient id="bg" cx="0.55" cy="0.35" r="0.9"><stop offset="0" stop-color="#123A41"/><stop offset="0.55" stop-color="#0E2328"/><stop offset="1" stop-color="#101418"/></radialGradient>
+<linearGradient id="heat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2FA58F"/><stop offset="0.5" stop-color="#E9A23B"/><stop offset="1" stop-color="#E2483D"/></linearGradient>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#F7F5F2" fill-opacity="0.6"/></marker>
+<marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#F7F5F2" fill-opacity="0.6"/></marker>
+<filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+
+<text x="60" y="74" class="serif" font-size="40" fill="#F7F5F2">Ondo <tspan fill="#E9A23B" font-size="30">温度</tspan><tspan fill="#F7F5F2" fill-opacity="0.55" font-size="26" dx="14">system architecture</tspan></text>
+<text x="60" y="108" class="sans" font-size="16" fill="#F7F5F2" fill-opacity="0.7">Rules decide. The LLM explains. You.com grounds every claim. Built on Emergent: React + FastAPI + MongoDB.</text>
+<rect x="60" y="124" width="140" height="3" rx="1.5" fill="url(#heat)"/>
+<text x="60" y="156" class="sans" font-size="11.5" font-weight="700" letter-spacing="2.2" fill="#F7F5F2" fill-opacity="0.5">PEOPLE + VOICE</text>
+<text x="450" y="156" class="sans" font-size="11.5" font-weight="700" letter-spacing="2.2" fill="#F7F5F2" fill-opacity="0.5">FASTAPI BACKEND · /api</text>
+<text x="1170" y="156" class="sans" font-size="11.5" font-weight="700" letter-spacing="2.2" fill="#F7F5F2" fill-opacity="0.5">GROUNDING, MODELS + DATA</text>
+<g transform="translate(60 172)">
+<rect width="330" height="190" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="162" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#2FA58F">GUEST</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Guest app (React, mobile-first)</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Cruise passenger · any language</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">“Just talk” intake <tspan class="mono">→</tspan> editable chips</text>
+<text x="20" y="108" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Soak Prescription + risk dial</text>
+<text x="20" y="127" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Soak Pass: QR, guided timer, water</text>
+<text x="20" y="146" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">“I feel unwell” · Ask Ondo</text>
+</g>
+<g transform="translate(60 380)">
+<rect width="330" height="190" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="162" rx="1.75" fill="#E2483D"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#E2483D">STAFF</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Staff Safety Console (React)</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Live board, refresh every 3 s</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Time in water vs personal limit</text>
+<text x="20" y="108" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Alerts rail with acknowledge</text>
+<text x="20" y="127" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">“Say what’s happening” voice box</text>
+<text x="20" y="146" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Demo drawer: heat spike, 10×, reset</text>
+</g>
+<g transform="translate(60 588)">
+<rect width="330" height="202" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="174" rx="1.75" fill="#E9A23B"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#E9A23B">VOICE</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Voice layer</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Willow: system-wide dictation, 100+</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">languages, types into any text box</text>
+<text x="20" y="108" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Fallback: browser Web Speech mic</text>
+<text x="20" y="127" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Spoken check-ins: speechSynthesis</text>
+<text x="20" y="146" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">in the guest’s own language</text>
+</g>
+<path d="M 60 650 C 30 650, 30 470, 58 470" fill="none" stroke="#E9A23B" stroke-opacity="0.6" stroke-width="1.6" stroke-dasharray="4 5" marker-end="url(#arr)"/>
+<path d="M 60 640 C 18 640, 18 260, 58 260" fill="none" stroke="#E9A23B" stroke-opacity="0.6" stroke-width="1.6" stroke-dasharray="4 5" marker-end="url(#arr)"/>
+<rect x="450" y="172" width="640" height="618" rx="20" fill="#0F1D22" fill-opacity="0.75" stroke="#F7F5F2" stroke-opacity="0.16"/>
+<g transform="translate(470 192)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Intake parser</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">LLM <tspan class="mono">→</tspan> structured profile</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">validated with Pydantic</text>
+<text x="20" y="90" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST /api/intake</text>
+</g>
+<g transform="translate(784 192)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Conditions service</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Live George Town heat index</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">You.com Search · knowledge: core</text>
+<text x="20" y="90" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">GET /api/conditions</text>
+</g>
+<rect x="470" y="312" width="610" height="112" rx="16" fill="url(#heat)" opacity="0.35" filter="url(#glow)"/>
+<rect x="470" y="312" width="610" height="112" rx="16" fill="#101A1E" stroke="url(#heat)" stroke-width="2"/>
+<text x="492" y="342" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#E9A23B">DETERMINISTIC · UNIT-TESTED · rules.py</text>
+<text x="492" y="370" class="serif" font-size="25" fill="#F7F5F2">Safety rules engine</text>
+<text x="492" y="396" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.75">Most restrictive limit wins · risk adds up · green &lt;35 · amber 35–60 · red &gt;60</text>
+<text x="492" y="414" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST /api/prescription → bath, max °C, minutes, rounds, cool-down, water</text>
+<path d="M 992 382 A 40 40 0 1 1 1068 382" fill="none" stroke="url(#heat)" stroke-width="8" stroke-linecap="round"/>
+<circle cx="1000" cy="352" r="6" fill="#F7F5F2" stroke="#2FA58F" stroke-width="3"/>
+<text x="1030" y="380" text-anchor="middle" class="sans" font-size="13" font-weight="700" fill="#F7F5F2">0–100</text>
+<g transform="translate(470 440)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#E9A23B"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Evidence service</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Cited answer per red flag</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">You.com Answer · [[n]] <tspan class="mono">→</tspan> chips</text>
+<text x="20" y="90" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST /api/ask</text>
+</g>
+<g transform="translate(784 440)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#E9A23B"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Explainer + translator</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">LLM writes the warm “why”</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">in the guest’s language</text>
+<text x="20" y="90" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">cannot change any number</text>
+</g>
+<g transform="translate(470 560)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Bookings + Soak Pass</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">6 baths · 30-min slots 13:00–19:00</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Pass code OND-XXXX + QR</text>
+<text x="20" y="90" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST /api/bookings</text>
+</g>
+<g transform="translate(784 560)">
+<rect width="296" height="104" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="76" rx="1.75" fill="#E2483D"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Soak sessions + alerts</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Timer, rounds, hydration</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">“I feel unwell”, limit reached</text>
+<text x="20" y="90" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">heat-spike alerts <tspan class="mono">→</tspan> staff</text>
+</g>
+<g transform="translate(470 680)">
+<rect width="296" height="92" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="64" rx="1.75" fill="#E2483D"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Staff incident parser</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Spoken report <tspan class="mono">→</tspan> LLM <tspan class="mono">→</tspan> incident</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">flag guest or lower a bath’s °C</text>
+</g>
+<g transform="translate(784 680)">
+<rect width="296" height="92" rx="14" fill="#15262D" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="64" rx="1.75" fill="#E2483D"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Demo controls + re-evaluation</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Heat index 46°C spike re-runs</text>
+<text x="20" y="71" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">the engine for every guest</text>
+</g>
+<line x1="390" y1="262" x2="448" y2="262" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)" marker-start="url(#arrS)"/>
+<text x="419" y="250" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">JSON</text>
+<line x1="390" y1="470" x2="448" y2="470" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)" marker-start="url(#arrS)"/>
+<text x="419" y="458" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">poll 3 s</text>
+<g transform="translate(1170 172)">
+<rect width="370" height="112" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="84" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#2FA58F">GROUNDING</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">You.com Search API</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Live heat index, ships, heat news</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">knowledge: core · highlights</text>
+<text x="20" y="108" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST ydc-index.io/v1/search</text>
+</g>
+<g transform="translate(1170 300)">
+<rect width="370" height="112" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="84" rx="1.75" fill="#E9A23B"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#E9A23B">GROUNDING</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">You.com Answer API</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Cited evidence for every red flag</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">and every guest question (~3 s)</text>
+<text x="20" y="108" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">POST api.you.com/v1/answer</text>
+</g>
+<g transform="translate(1170 428)">
+<rect width="370" height="112" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="84" rx="1.75" fill="#E2483D"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#E2483D">MODEL</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Emergent Universal LLM key</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">Claude Sonnet 5.5: extraction,</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">explanation, translation, incidents</text>
+<text x="20" y="108" class="mono" font-size="12" fill="#F7F5F2" fill-opacity="0.6">EMERGENT_LLM_KEY (server only)</text>
+</g>
+<g transform="translate(1170 556)">
+<rect width="370" height="150" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="122" rx="1.75" fill="#2FA58F"/>
+<text x="20" y="26" class="sans" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#2FA58F">DATA</text>
+<text x="20" y="48" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">MongoDB</text>
+<text x="20" y="70" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">guests · prescriptions · bookings</text>
+<text x="20" y="89" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">baths · slots · sessions · alerts</text>
+<text x="20" y="108" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">incidents · conditions · api_cache</text>
+<text x="20" y="127" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">every action persists, survives refresh</text>
+</g>
+<g transform="translate(1170 722)">
+<rect width="370" height="68" rx="14" fill="#14232A" stroke="#F7F5F2" stroke-opacity="0.12"/>
+<rect x="0" y="14" width="3.5" height="40" rx="1.75" fill="#E9A23B"/>
+<text x="20" y="30" class="sans" font-size="16" font-weight="650" fill="#F7F5F2">Deployed on Emergent</text>
+<text x="20" y="52" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.72">public *.emergent.host URL</text>
+</g>
+<line x1="1092" y1="228" x2="1168" y2="228" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1092" y1="356" x2="1168" y2="356" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1092" y1="484" x2="1168" y2="484" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="1092" y1="630" x2="1168" y2="630" stroke="#F7F5F2" stroke-opacity="0.45" stroke-width="1.6" marker-end="url(#arr)" marker-start="url(#arrS)"/>
+<text x="1130" y="218" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">12 s</text>
+<text x="1130" y="346" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">20 s</text>
+<text x="1130" y="474" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">JSON</text>
+<text x="1130" y="620" text-anchor="middle" class="mono" font-size="10" fill="#F7F5F2" fill-opacity="0.55">read / write</text>
+<text x="1130" y="268" text-anchor="middle" class="sans" font-size="9.5" fill="#E9A23B" fill-opacity="0.8">X-API-Key</text>
+<text x="1130" y="281" text-anchor="middle" class="sans" font-size="9.5" fill="#E9A23B" fill-opacity="0.8">server-side</text>
+<text x="60" y="836" class="sans" font-size="11.5" font-weight="700" letter-spacing="2.2" fill="#F7F5F2" fill-opacity="0.5">THE LOOP</text>
+<g transform="translate(60.0 852)">
+<rect width="169.2" height="54" rx="27" fill="#2FA58F" fill-opacity="0.14" stroke="#2FA58F" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#2FA58F">01</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Just talk</text>
+</g>
+<path d="M 235.2 873 L 241.2 879 L 235.2 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(247.2 852)">
+<rect width="169.2" height="54" rx="27" fill="#4BA889" fill-opacity="0.14" stroke="#4BA889" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#4BA889">02</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Profile chips</text>
+</g>
+<path d="M 422.5 873 L 428.5 879 L 422.5 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(434.5 852)">
+<rect width="169.2" height="54" rx="27" fill="#78A779" fill-opacity="0.14" stroke="#78A779" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#78A779">03</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Live heat</text>
+</g>
+<path d="M 609.8 873 L 615.8 879 L 609.8 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(621.8 852)">
+<rect width="169.2" height="54" rx="27" fill="#A9A462" fill-opacity="0.14" stroke="#A9A462" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#A9A462">04</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Rules engine</text>
+</g>
+<path d="M 797.0 873 L 803.0 879 L 797.0 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(809.0 852)">
+<rect width="169.2" height="54" rx="27" fill="#D6A04B" fill-opacity="0.14" stroke="#D6A04B" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#D6A04B">05</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Prescription + sources</text>
+</g>
+<path d="M 984.2 873 L 990.2 879 L 984.2 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(996.2 852)">
+<rect width="169.2" height="54" rx="27" fill="#E9A23B" fill-opacity="0.14" stroke="#E9A23B" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#E9A23B">06</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Book + Soak Pass</text>
+</g>
+<path d="M 1171.5 873 L 1177.5 879 L 1171.5 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(1183.5 852)">
+<rect width="169.2" height="54" rx="27" fill="#E6743C" fill-opacity="0.14" stroke="#E6743C" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#E6743C">07</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Guided soak</text>
+</g>
+<path d="M 1358.8 873 L 1364.8 879 L 1358.8 885" fill="none" stroke="#F7F5F2" stroke-opacity="0.5" stroke-width="1.6"/>
+<g transform="translate(1370.8 852)">
+<rect width="169.2" height="54" rx="27" fill="#E2483D" fill-opacity="0.14" stroke="#E2483D" stroke-opacity="0.85"/>
+<text x="84.6" y="22" text-anchor="middle" class="mono" font-size="10" fill="#E2483D">08</text>
+<text x="84.6" y="40" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#F7F5F2">Staff console</text>
+</g>
+<text x="60" y="950" class="sans" font-size="13" fill="#F7F5F2" fill-opacity="0.55">Every You.com call is cached in MongoDB for 10 minutes with a seeded fallback and a Live / Cached badge, so the demo never breaks. Ondo gives safety guidance, not medical advice.</text>
+</svg>

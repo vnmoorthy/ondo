@@ -1,0 +1,26 @@
+{
+  "description": "Ondo 温度: the AI that makes heat safe for every body. Cruise guests at a Penang onsen just talk, in any language; a deterministic safety engine plus live, cited You.com data gives each a personal Soak Prescription, and staff watch everyone in the water. Built on Emergent, voice by Willow.",
+  "homepage": "https://heat-safe-onsen.emergent.host",
+  "topics": [
+    "heat-safety",
+    "climate-health",
+    "voice-ai",
+    "onsen",
+    "penang",
+    "cruise",
+    "wellness",
+    "you-com",
+    "emergent",
+    "willow",
+    "fastapi",
+    "react",
+    "mongodb",
+    "llm",
+    "ai-agents",
+    "multilingual",
+    "health-tech",
+    "speech-to-text",
+    "safety",
+    "hackathon"
+  ]
+}
