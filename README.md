@@ -8,16 +8,16 @@
 
 **Ondo is the AI heat-safety host for Yu Pinang Onsen in Penang.** Cruise passengers just talk, in any language, about who they are, how they feel and the medicines they take. Ondo checks Penang's live heat with You.com, runs a deterministic safety engine, and gives every guest a personal **Soak Prescription**, a guided soak and a staff team that is watching.
 
-[![Built with Emergent](https://img.shields.io/badge/Built%20with-Emergent-0E3B43?style=for-the-badge&labelColor=101418)](https://emergent.sh)
-[![Grounded by You.com](https://img.shields.io/badge/Grounded%20by-You.com-2FA58F?style=for-the-badge&labelColor=101418)](https://you.com)
-[![Voice by Willow](https://img.shields.io/badge/Voice%20by-Willow-E9A23B?style=for-the-badge&labelColor=101418)](https://willowvoice.com)
-[![Speech to Ship 2026](https://img.shields.io/badge/Speech%20to%20Ship-2026-E2483D?style=for-the-badge&labelColor=101418)](#acknowledgements)
+[![Built with Emergent](https://img.shields.io/badge/Built%20with-Emergent-FF7A1A?style=for-the-badge&labelColor=0B0B0A)](https://emergent.sh)
+[![Grounded by You.com](https://img.shields.io/badge/Grounded%20by-You.com-FF5A1F?style=for-the-badge&labelColor=0B0B0A)](https://you.com)
+[![Voice by Willow](https://img.shields.io/badge/Voice%20by-Willow-FFB067?style=for-the-badge&labelColor=0B0B0A)](https://willowvoice.com)
+[![Speech to Ship 2026](https://img.shields.io/badge/Speech%20to%20Ship-2026-B5441A?style=for-the-badge&labelColor=0B0B0A)](#acknowledgements)
 <br>
-[![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-frontend-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
-[![MongoDB](https://img.shields.io/badge/MongoDB-data-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://www.mongodb.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F7F5F2?style=flat-square)](LICENSE)
-[![Safety guidance, not medical advice](https://img.shields.io/badge/safety%20guidance-not%20medical%20advice-E9A23B?style=flat-square)](#safety--privacy)
+[![FastAPI](https://img.shields.io/badge/FastAPI-backend-1B1A17?style=flat-square&logo=fastapi&logoColor=FF7A1A&labelColor=0B0B0A)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-frontend-1B1A17?style=flat-square&logo=react&logoColor=FF7A1A&labelColor=0B0B0A)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-data-1B1A17?style=flat-square&logo=mongodb&logoColor=FF7A1A&labelColor=0B0B0A)](https://www.mongodb.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-FF7A1A?style=flat-square&labelColor=0B0B0A)](LICENSE)
+[![Safety guidance, not medical advice](https://img.shields.io/badge/safety%20guidance-not%20medical%20advice-FFB020?style=flat-square&labelColor=0B0B0A)](#safety--privacy)
 
 **[▶ Live demo](https://heat-safe-onsen.emergent.host)** &nbsp;·&nbsp; **[Pitch deck](deck/Ondo-Pitch.pptx)** &nbsp;·&nbsp; **[3-minute storyboard](docs/STORYBOARD.md)** &nbsp;·&nbsp; **[10-minute demo script](docs/DEMO_SCRIPT.md)** &nbsp;·&nbsp; **[Architecture](docs/ARCHITECTURE.md)** &nbsp;·&nbsp; **[Safety engine](docs/SAFETY_ENGINE.md)** &nbsp;·&nbsp; **[How we chose the idea](docs/TOURNAMENT.md)**
 
@@ -105,13 +105,13 @@ The onsen knows none of this about its guests. It puts up a sign. Its staff can'
 
 ## Screenshots
 
-> Captured from the live app at https://heat-safe-onsen.emergent.host (heat-spike and Ask Ondo panels are illustrations until re-captured).
+> Captured from the live app at https://heat-safe-onsen.emergent.host (Ask Ondo panel is an illustration).
 
 | Just talk | Soak Prescription | Soak Pass |
 |---|---|---|
 | <img src="assets/screens/01-just-talk.png" alt="Just talk intake" width="100%"> | <img src="assets/screens/02-prescription.png" alt="Soak Prescription" width="100%"> | <img src="assets/screens/03-soak-pass.png" alt="Soak Pass" width="100%"> |
-| **Staff Safety Console** | **Heat spike** | **Ask Ondo** |
-| <img src="assets/screens/04-staff-console.png" alt="Staff Safety Console" width="100%"> | <img src="assets/screens/05-heat-spike.png" alt="Heat spike" width="100%"> | <img src="assets/screens/06-ask-ondo.png" alt="Ask Ondo" width="100%"> |
+| **Staff Safety Console** | **Body heat curve** | **Ask Ondo** |
+| <img src="assets/screens/04-staff-console.png" alt="Staff Safety Console" width="100%"> | <img src="assets/screens/05-body-heat-curve.png" alt="Body heat curve" width="100%"> | <img src="assets/screens/06-ask-ondo.png" alt="Ask Ondo" width="100%"> |
 
 ---
 
